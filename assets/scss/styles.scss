@@ -1,0 +1,184 @@
+/*===== GOOGLE FONTS =====*/
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
+
+/*===== VARIABLES CSS =====*/
+:root {
+    /*===== Colors =====*/
+    --first-color: #272A3A;
+    --first-color-light: #8A8EAA;
+    --first-color-lighten: #F8F8FC;
+    --first-color-lighten2: rgba(248, 248, 252, 0.477);
+
+    /*===== Font and typography =====*/
+    --body-font: 'Ubuntu', sans-serif;
+
+    --normal-font-size: 1rem;
+    --smaller-font-size: .813rem;
+}
+
+/*===== BASE =====*/
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+    user-select: none;
+
+    background: #A770EF;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+    // background-color: #cf9ec8;
+    // background: linear-gradient(271deg, #5ce3c0, #5cd2e3, #5cafe3);
+    // background-size: 600% 600%;
+    // animation: bg-animation 18s ease infinite;
+}
+
+h1 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*===== BG Animation =====*/
+@keyframes bg-animation {
+    0% {
+        background-position: 0% 51%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 51%
+    }
+}
+
+/*===== Title =====*/
+
+.title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem auto 0 auto;
+    padding: 0;
+    padding: 1.9rem;
+    border-radius: 1rem;
+    background-color: var(--first-color-lighten2);
+    width: max-content;
+
+    &__name {
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--first-color);
+        text-align: center;
+        margin: 0;
+        text-shadow: 1px 1px 5px #FFFFFF, 1px 1px 10px #FFFFFF, 1px 1px 20px #FFFFFF, 1px 1px 20px #FFFFFF, 1px 1px 20px #FFFFFF, 1px 1px 20px #FFFFFF;
+    }
+
+    &__subtitle {
+        font-size: .85rem;
+        font-weight: 400;
+        color: var(--first-color-light);
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    &__copyright {
+        font-size: .80rem;
+        font-weight: 400;
+        color: var(--first-color-lighten);
+        text-align: center;
+        margin: 0.6rem 0 0 0;
+    }
+}
+
+/*===== DRAG and DROP =====*/
+.drop {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+
+    &__container {
+        display: grid;
+        row-gap: 1rem;
+        padding: 2rem;
+        border-radius: 1rem;
+        background-color: var(--first-color-lighten2);
+        backdrop-filter: blur(10px);
+    }
+
+    &__card,
+    &__data {
+        display: flex;
+        align-items: center;
+    }
+
+    &__card {
+        width: 360px;
+        background-color: var(--first-color-lighten);
+        justify-content: space-between;
+        padding: .75rem 1.25rem .75rem .75rem;
+        box-shadow: 4px 4px 16px #E1E1E1, -2px -2px 16px #FFF;
+        border-radius: 2.5rem;
+    }
+
+    &__img {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        margin-right: 1rem;
+    }
+
+    &__name {
+        font-size: var(--normal-font-size);
+        color: var(--first-color);
+        font-weight: 500;
+    }
+
+    &__desc {
+        font-size: var(--smaller-font-size);
+        color: var(--first-color-light);
+    }
+
+    &__view-project {
+        margin: 0 .375rem;
+        color: var(--first-color-light);
+        transition: .2s;
+        font-size: 1.5rem;
+
+        &:hover {
+            color: var(--first-color);
+        }
+    }
+}
+
+/* Class name for the chosen item */
+.sortable-chosen {
+    box-shadow: 8px 8px 32px #E1E1E1;
+}
+
+/* Class name for the dragging item */
+.sortable-drag {
+    opacity: 0;
+}
